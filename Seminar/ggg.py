@@ -10,7 +10,6 @@ parser = argparse.ArgumentParser()
 parser.add_argument('month', type= str)
 parser.add_argument('year', type= str)
 month_year = parser.parse_args()
-
 month = month_year.month
 year = month_year.year
 
@@ -21,7 +20,6 @@ assert int(year) > 0, "Illigal value"
 
 outcome_data = pd.read_excel(fr"C:\Users\anton\OneDrive\Desktop\инфа\outcome_{month}.{year}.xlsx")
 outcome_data
-
 outcome_data["День"] = [int(x.split()[0]) for x in outcome_data["Дата"]]
 outcome_data
 
