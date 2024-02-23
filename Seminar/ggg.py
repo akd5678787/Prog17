@@ -1,7 +1,9 @@
+
+import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
-import matplotlib.pyplot as plt
 import numpy as np
+
 import argparse
 
 parser = argparse.ArgumentParser()
@@ -11,13 +13,11 @@ a = parser.parse_args()
 
 month = a.month
 year = a.year
-
-
 m=int(month)
 y=int(year)
 
 assert isinstance(m, int)
-assert m > 0 and m<=12, "Недопустимые значение"
+assert (m > 0 and m<=12), "Недопустимые значение"
 assert isinstance(y, int)
 assert y > 0, "Недопустимые значение"
 
@@ -29,13 +29,13 @@ outcome_data
 
 fig, ax = plt.subplots(constrained_layout=True)
 sns.barplot(
-data=outcome_data,
-x="Сумма",
-y="Категория",
-orient = "h",
-estimator="sum",
-errorbar=None,
-ax=ax
+  data=outcome_data,
+  x="Сумма",
+  y="Категория",
+  orient = "h",
+  estimator="sum",
+  errorbar=None,
+  ax=ax
 )
 plt.title(f'{month}.{year}')
 plt.show()
