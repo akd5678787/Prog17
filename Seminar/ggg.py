@@ -9,17 +9,15 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument('month', type= str)
 parser.add_argument('year', type= str)
-a = parser.parse_args()
+month_year = parser.parse_args()
 
-month = a.month
-year = a.year
-m=int(month)
-y=int(year)
+month = month_year.month
+year = month_year.year
 
-assert isinstance(m, int)
-assert (m > 0 and m<=12), "Недопустимые значение"
-assert isinstance(y, int)
-assert y > 0, "Недопустимые значение"
+assert isinstance(int(month), int)
+assert (int(month) > 0 and int(month)<=12), "Illigal value"
+assert isinstance(int(year), int)
+assert int(year) > 0, "Illigal value"
 
 outcome_data = pd.read_excel(fr"C:\Users\anton\OneDrive\Desktop\инфа\outcome_{month}.{year}.xlsx")
 outcome_data
