@@ -68,24 +68,6 @@ int year, pages;
 
 size = sizeof(some_books)/sizeof(some_books[0]);
 
-/*
-getline(cin, book_name);
-getline(cin, author_name);
-getline(cin, author_surname);
-cin >> year;
-cin >> pages;
-
-*/
-
-
-
-
-/* Books book1 = CreateBook(book_name, author_name, author_surname,
- year, pages);
-
-DisplayBook(book1);
-
-*/
 
 for (int i=0; i < size; ++i) {
 
