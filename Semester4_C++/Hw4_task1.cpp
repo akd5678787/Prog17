@@ -20,11 +20,11 @@ vector<int> RandomArr(int size, int minVal, int maxVal) {
 }
 
 template<typename T>
-void BubbleSort(std::vector<T>& vec) {
+void BubbleSort(std::vector<T>& vec) { // неоптимизированная версия
     bool swapped;
     for (size_t i = 0; i < vec.size(); ++i) {
         swapped = false;
-        for (size_t j = 0; j < vec.size() - i - 1; ++j) {
+        for (size_t j = 0; j < vec.size() - 1; ++j) {
             if (vec[j] > vec[j + 1]) {
                 std::swap(vec[j], vec[j + 1]);
                 swapped = true;
@@ -142,15 +142,5 @@ int main() {
     for (const auto& entry : times) {
         cout << entry.first << " mcs: " << entry.second << endl;
     }
-
-
-
-
-
-
-
-
-    
-
     return 0;
 }
